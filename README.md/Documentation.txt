@@ -1,0 +1,112 @@
+FORMAT: 1A
+HOST: https://127.0.0.1:4000/
+
+# department
+
+department is a simple API of  information
+
+##Notice Collection [/department/notice]
+
+### List All Notice [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                 "status": "success",
+                 "result": 1,
+                 "data": {
+                        "notices": [
+                            {
+                                "_id": "5e0cac88dd30799095c842f7",
+                                 "event": "intdependent day",
+                                 "date": "26.03.2020"
+                                 "time": "10 Am",
+                                 "__v": 0
+                             },
+                             
+                        ]
+                }
+        }
+        ]
+        
+    ### Create a New User [POST]
+
+You may create new notice using this action. It takes a JSON
+object containing notice event, date and time.
+
++ Request (application/json)
+
+        {
+            "event": "Idependent day",
+                "date": "26.03.2020",
+                "time": "8 AM",
+        }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+               
+                "_id": "5e5f76185f418810e0a54a37",
+                "event": "Idependent day",
+                "date": "26.03.2020",
+                "time": "8 AM",
+                "__v": 0
+            }
+
+## notices Retrieve Update and Delete [/capmus/user/5e0cac88dd30799095c842f7]
+
+### Get single Notice [GET]
+
++ Response 200 (application/json)
+
+        
+        {
+            "status": "success",
+            "data": {
+                 "notice": {
+                  "_id": "5e0cac88dd30799095c842f7",
+                  "event": "Idependent day",
+                "date": "26.03.2020",
+                "time": "8 AM",
+                  "__v": 0
+                }    
+            }
+        }
+    
+
+     ### Update a User [PATCH]
+
+You may update a  notice using this action. It takes a JSON
+object containing update  information.
+
++ Request (application/json)
+
+        {
+           "time": "10 AM"
+        }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+               
+                "_id": "5e5f76185f418810e0a54a37",
+                "event": "Idependent day",
+                "date": "26.03.2020",
+                "time": "10 AM",
+                "__v": 0
+            }                     
+### Delete a User [DELETE]
+
+You may delete a notice using this action.
+
+
++ Response 200 (application/json)
+
+    + Headers
